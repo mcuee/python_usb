@@ -37,7 +37,7 @@ ep = usb.util.find_descriptor(
 
 ep2 = usb.util.find_descriptor(
     intf,
-    # match the first OUT endpoint
+    # match the first IN endpoint
     custom_match = \
     lambda e: \
         e.bEndpointAddress == 0x81)
@@ -57,7 +57,7 @@ def read_loop():
     start = time.time()
     trans = 0
     while True:
-        data = dev.read(0x81, chunkw, 1000)
+        data = dev.read(0x81, chunkr, 1000)
         trans = trans + len(data)
         if time.time() > start + 1:
             bps = trans/(time.time() - start)
