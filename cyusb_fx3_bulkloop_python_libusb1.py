@@ -1,5 +1,6 @@
-import usb1
+# codes from https://github.com/vpelletier/python-libusb1/issues/72
 
+import usb1
 
 class USB:
     """USB class that handles IO operation with USB device
