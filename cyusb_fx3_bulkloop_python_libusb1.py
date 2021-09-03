@@ -55,7 +55,9 @@ class USB:
             with handle.claimInterface(0):
                 bytes_written = handle.bulkWrite(
                     self.endpoint_out, msg, timeout)
-            return bytes_written == len(msg)
+            bytes_written == len(msg)
+            print("Number of bytes written: ", bytes_written)
+            return True
         except Exception as err:
             print("write error", err)
 
