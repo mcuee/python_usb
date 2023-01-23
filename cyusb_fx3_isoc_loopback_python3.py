@@ -53,7 +53,7 @@ def read_loop():
     start = time.time()
     trans = 0
     while True:
-        data = dev.read(0x82, chunkr, 1000)
+        data = dev.read(0x83, chunkr, 1000)
         trans = trans + len(data)
         if time.time() > start + 1:
             bps = trans/(time.time() - start)
